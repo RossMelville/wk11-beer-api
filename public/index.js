@@ -1,6 +1,6 @@
 var app = function(){
   
-  var url = "https://api.punkapi.com/v2/beers";
+  var url = "https://s3-eu-west-1.amazonaws.com/brewdogapi/beers.json";
   makeRequest(url, requestComplete);
 
 }
@@ -36,10 +36,12 @@ var populateList = function(beers){
     img.width = "50";
     img.height = "150";
     
-    li.innerText = beer.name;
+    h2.innerText = beer.name;
 
-    li.appendChild(img);
+    li.appendChild(h2);
+    div.appendChild(img);
     ul.appendChild(li);
+    ul.appendChild(div);
   })
 }
 
